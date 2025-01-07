@@ -12,16 +12,18 @@ import aves from "../../img/Aves.png";
 export const Foros = () => {
     return (
         <div className="foros-container">
+            <div className="decorative-line-1"></div>
+            <div className="decorative-line-2"></div>        
             <div className="content-section">
                 <h1 className="main-title">
                     <span className="pink-text">CONSEJOS Y</span><br />
                     <span className="pink-text">COMUNIDAD</span>
                 </h1>
-                <h2 className="subtitle">¡ A UN CLICK !</h2>
+                <h2 className="subtitle">/ A UN CLICK /</h2>
                 
                 <p className="welcome-text">
-                    Bienvenidos a la comunidad de Petpals. Este es el lugar donde podrás encontrar todo
-                    lo que necesitas para el día a día con tu mascota.<br /><br />
+                    Bienvenidos a la comunidad de <strong>Petpals</strong>. Este es el lugar donde podrás encontrar todo
+                    lo que necesitas para el día a día con tu mascota.<br />
                     Entra en un foro y habla con gente de todo el mundo, sigue sus perfiles y acompañanos
                     en esta nueva aventura. No olvides visitar nuestras secciones secundarias para saber
                     más sobre los cuidados, salud, alimentación y bienestar de tus pequeños.

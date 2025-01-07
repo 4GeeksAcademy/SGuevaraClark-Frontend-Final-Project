@@ -1,11 +1,70 @@
 /* src/styles/foros.css */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
+
+
+
+
 .foros-container {
-    padding: 40px 20px;
-    max-width: 1200px;
+    position: relative;
+    padding: 40px 20;
+
     margin: 0 auto;
     font-family: 'Oswald', sans-serif;
+    overflow: hidden; 
+}
+
+/* Blue circle */
+.foros-container::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background-color: #B5D1E2; /* Adjust color to match design */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Yellow square/rectangle */
+.foros-container::after {
+    content: '';
+    position: absolute;
+    top: 200px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background-color: #FFF3CC; /* Adjust color to match design */
+    border-radius: 30px;
+    transform: rotate(-10deg);
+    z-index: -1;
+}
+
+/* Red line */
+.decorative-line-1 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 150px;
+    height: 30px;
+    background-color: #FFB6C1;
+    transform: rotate(70deg);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Blue line */
+.decorative-line-2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #B5D1E2;
+    transform: rotate(70deg);
+    z-index: -1;
+    border-radius: 15px;
 }
 
 .content-section {
