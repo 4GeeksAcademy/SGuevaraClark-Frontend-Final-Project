@@ -18,7 +18,7 @@ export const Navbar = () => {
 			  <Link to="/my-feed">MY FEED</Link>
 			</li>
 			<li className="brand">
-			  <Link to="/">PETPALS</Link>
+			  <Link to="/login">PETPALS</Link>
 			</li>
 			<li>
 			  <Link to="/foros">FOROS</Link>
