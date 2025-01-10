@@ -1,20 +1,19 @@
 import React from "react";
 import "../../styles/auth.css";
-/*
 import catIllustration from "../../img/cat-illustration.png";
 import petCircles from "../../img/pet-circles-left.png"; // Left side image with pet circles
-*/
+
 
 export const Register = () => {
     return (
         <div className="auth-wrapper">
             <div className="auth-container">
                 <div className="auth-left">
-                   {/* <img src={petCircles} alt="Pet Circles" className="pet-circles" /> */}
+                    <img src={petCircles} alt="Pet Circles" className="pet-circles" /> 
                 </div>
                 <div className="auth-right register-form">
                     <div className="illustration-container">
-                       {/* <img src={catIllustration} alt="Cat Illustration" className="cat-illustration" /> */}
+                        <img src={catIllustration} alt="Cat Illustration" className="cat-illustration" /> 
                     </div>
                     <div className="auth-form">
                         <h2>Register</h2>

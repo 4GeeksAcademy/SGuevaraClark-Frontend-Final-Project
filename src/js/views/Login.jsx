@@ -1,9 +1,9 @@
 import React from "react";
 import "../../styles/auth.css";
-/*
+
 import catIllustration from "../../img/cat-illustration.png"; // The turquoise cat illustration
 import petCircles from "../../img/pet-circles-right.png"; // The right side image with pet circles
-*/
+
 
 export const Login = () => {
     return (
@@ -11,7 +11,7 @@ export const Login = () => {
             <div className="auth-container">
                 <div className="auth-left">
                     <div className="illustration-container">
-                     {/*   <img src={catIllustration} alt="Cat Illustration" className="cat-illustration" /> */}
+                     <img src={catIllustration} alt="Cat Illustration" className="cat-illustration" /> 
                     </div>
                     <div className="auth-form">
                         <h2>Sign In</h2>
@@ -30,7 +30,7 @@ export const Login = () => {
                     </div>
                 </div>
                 <div className="auth-right">
-                  {/*  <img src={petCircles} alt="Pet Circles" className="pet-circles" /> */}
+                   <img src={petCircles} alt="Pet Circles" className="pet-circles" /> 
                 </div>
             </div>
         </div>
