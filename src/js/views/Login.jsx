@@ -1,18 +1,13 @@
 import React from "react";
 import "../../styles/auth.css";
-
-import catIllustration from "../../img/cat-illustration.png"; // The turquoise cat illustration
-import petCircles from "../../img/pet-circles-right.png"; // The right side image with pet circles
-
+import "../../styles/login.css";
+import loginImage from "../../img/login-image.png"; 
 
 export const Login = () => {
     return (
         <div className="auth-wrapper">
             <div className="auth-container">
                 <div className="auth-left">
-                    <div className="illustration-container">
-                     <img src={catIllustration} alt="Cat Illustration" className="cat-illustration" /> 
-                    </div>
                     <div className="auth-form">
                         <h2>Sign In</h2>
                         <form>
@@ -25,12 +20,18 @@ export const Login = () => {
                                 <input type="password" placeholder="Enter your password" />
                             </div>
                             <button type="submit" className="auth-button">Sign In</button>
-                            <a href="#" className="forgot-password">Forgot password?</a>
+                            <div className="link-container">
+                                <a href="#" className="forgot-password">Forgot password?</a>
+                                <div className="register-prompt">
+                                    <span>New here? </span>
+                                    <a href="/register" className="register-link">Register Now</a>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div className="auth-right">
-                   <img src={petCircles} alt="Pet Circles" className="pet-circles" /> 
+                   <img src={loginImage} alt="Login Image" className="login-image" /> 
                 </div>
             </div>
         </div>
