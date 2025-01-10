@@ -19,12 +19,12 @@
     left: -100px;
     width: 400px;
     height: 400px;
-    background-color: #B5D1E2; /* Adjust color to match design */
+    background-color: #B5D1E2; 
     border-radius: 50%;
     z-index: -1;
 }
 
-/* Yellow square/rectangle */
+/* Yellow rectangle */
 .foros-container::after {
     content: '';
     position: absolute;
@@ -32,7 +32,7 @@
     right: -50px;
     width: 300px;
     height: 300px;
-    background-color: #FFF3CC; /* Adjust color to match design */
+    background-color: #FFF3CC; 
     border-radius: 30px;
     transform: rotate(-10deg);
     z-index: -1;
@@ -140,7 +140,7 @@
     transition: transform .6s ease-in-out;
 }
 
-/* Adjust responsive design */
+
 @media (max-width: 1200px) {
     .pet-card {
         width: 200px;

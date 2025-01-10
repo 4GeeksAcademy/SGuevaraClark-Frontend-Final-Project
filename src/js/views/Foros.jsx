@@ -1,4 +1,8 @@
 import React from "react";
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css/autoplay';  
+import "swiper/css";
 import "../../styles/foros.css";
 
 
@@ -9,11 +13,56 @@ import roedores from "../../img/Roedores.png";
 import artropodos from "../../img/Artropodos.png";
 import aves from "../../img/Aves.png";
 
+const sliderSettings = {
+    slidesPerView: 5,  
+    spaceBetween: 10, 
+    loop: true,
+    modules: [Autoplay],  
+    autoplay: {
+        delay: 3000,  
+        disableOnInteraction: false,  
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 3,
+        },
+        1200: {
+            slidesPerView: 5,  
+        }
+    }
+};
+
+const SliderButtons = () => {
+    const swiper = useSwiper();
+    return (
+        <div className="carousel-buttons">
+            <button onClick={() => swiper.slidePrev()} className="carousel-button prev">&lt;</button>
+            <button onClick={() => swiper.slideNext()} className="carousel-button next">&gt;</button>
+        </div>
+    );
+};
+
 export const Foros = () => {
+    const pets = [
+        { image: reptiles, label: 'REPTILES' },
+        { image: gatos, label: 'GATOS' },
+        { image: perros, label: 'PERROS' },
+        { image: roedores, label: 'ROEDORES' },
+        { image: artropodos, label: 'ARTRÓPODOS' },
+        { image: aves, label: 'AVES' }
+    ];
+
     return (
         <div className="foros-container">
             <div className="decorative-line-1"></div>
-            <div className="decorative-line-2"></div>        
+            <div className="decorative-line-2"></div>
+
             <div className="content-section">
                 <h1 className="main-title">
                     <span className="pink-text">CONSEJOS Y</span><br />
@@ -22,91 +71,28 @@ export const Foros = () => {
                 <h2 className="subtitle">/ A UN CLICK /</h2>
                 
                 <p className="welcome-text">
-                    Bienvenidos a la comunidad de <strong>Petpals</strong>. Este es el lugar donde podrás encontrar todo
-                    lo que necesitas para el día a día con tu mascota.<br />
+                    Bienvenidos a la comunidad de <strong>Petpals</strong>. <br/> Este es el lugar donde podrás encontrar todo
+                    lo que necesitas para el día a día con tu mascota.
                     Entra en un foro y habla con gente de todo el mundo, sigue sus perfiles y acompañanos
-                    en esta nueva aventura. No olvides visitar nuestras secciones secundarias para saber
-                    más sobre los cuidados, salud, alimentación y bienestar de tus pequeños.
+                    en esta nueva aventura. No olvides visitar nuestras secciones secundarias para saber más sobre los cuidados, salud,
+                    alimentaición y bienestar de tus pequeños. 
                 </p>
             </div>
 
             <div className="carousel-section">
-                <div id="petCarousel" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        {/* First slide - Initial 4 images */}
-                        <div className="carousel-item active">
-                            <div className="carousel-group">
-                                <div className="pet-card">
-                                    <img src={reptiles} alt="Reptiles" />
-                                    <span className="pet-label">¡ REPTILES !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={gatos} alt="Gatos" />
-                                    <span className="pet-label">¡ GATOS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={perros} alt="Perros" />
-                                    <span className="pet-label">¡ PERROS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={roedores} alt="Roedores" />
-                                    <span className="pet-label">¡ ROEDORES !</span>
-                                </div>
+                <Swiper {...sliderSettings} className="custom-carousel">
+                    <SliderButtons />
+                    {pets.map((pet, i) => (
+                        <SwiperSlide key={i}>
+                            <div className="pet-card">
+                                <img src={pet.image} alt={pet.label} />
+                                <span className="pet-label">{pet.label}</span>
                             </div>
-                        </div>
-                        {/* Second slide - Shift one image */}
-                        <div className="carousel-item">
-                            <div className="carousel-group">
-                                <div className="pet-card">
-                                    <img src={gatos} alt="Gatos" />
-                                    <span className="pet-label">¡ GATOS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={perros} alt="Perros" />
-                                    <span className="pet-label">¡ PERROS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={roedores} alt="Roedores" />
-                                    <span className="pet-label">¡ ROEDORES !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={artropodos} alt="Artrópodos" />
-                                    <span className="pet-label">¡ ARTRÓPODOS !</span>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Third slide - Shift one more image */}
-                        <div className="carousel-item">
-                            <div className="carousel-group">
-                                <div className="pet-card">
-                                    <img src={perros} alt="Perros" />
-                                    <span className="pet-label">¡ PERROS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={roedores} alt="Roedores" />
-                                    <span className="pet-label">¡ ROEDORES !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={artropodos} alt="Artrópodos" />
-                                    <span className="pet-label">¡ ARTRÓPODOS !</span>
-                                </div>
-                                <div className="pet-card">
-                                    <img src={aves} alt="Aves" />
-                                    <span className="pet-label">¡ AVES !</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#petCarousel" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#petCarousel" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
     );
 };
+
