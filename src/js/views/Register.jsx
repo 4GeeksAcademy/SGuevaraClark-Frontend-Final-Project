@@ -8,9 +8,9 @@ export const Register = () => {
         <div className="auth-wrapper">
             <div className="auth-container">
                 <div className="auth-left">
-                <img src={registerImage} alt="Register Image" className="pet-circles" />
+                <img src={registerImage} alt="Register Image" className="register-image" />
                 </div>
-                    
+                
                 <div className="auth-right">
                 <div className="auth-form">
                         <h2>Register</h2>
@@ -41,3 +41,4 @@ export const Register = () => {
         </div>
     );
 };
+
